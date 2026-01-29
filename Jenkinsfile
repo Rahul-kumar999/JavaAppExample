@@ -1,17 +1,11 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven3'
-        jdk 'Java17'
-    }
-
     stages {
 
         stage('Checkout Code') {
             steps {
                 git branch: 'main',
-                    credentialsId: 'github-creds',
                     url: 'https://github.com/Rahul-kumar999/JavaAppExample.git'
             }
         }
